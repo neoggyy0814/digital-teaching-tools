@@ -1,0 +1,33 @@
+Taiwan Ministry of Education Standard Chinese Character Stroke-Order Corpus
+
+Authority and source:
+中華民國教育部
+Ministry of Education, Republic of China (Taiwan)
+《國字標準字體筆順學習網》2025
+https://stroke-order.learningweb.moe.edu.tw/
+
+Discovery source:
+Official 「全字筆順提示下載」 6,063-character archive
+https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip
+
+Teaching-data license:
+Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Taiwan
+CC BY-NC-ND 3.0 TW
+https://creativecommons.org/licenses/by-nc-nd/3.0/tw/
+
+This local corpus is provided only for noncommercial teaching use. The
+normalized JSON preserves the official stroke order, stroke outlines, and
+ordered writing tracks. It applies one technical coordinate-format conversion
+to every character so the official data can be consumed by Hanzi Writer:
+
+  x' = x / 2
+  y' = 900 - y / 2
+
+The Ministry of Education teaching data is not CC0 and is not relicensed by
+this project. No endorsement by the Ministry of Education is implied.
+
+Tooling license distinction:
+- g0v/moedict.tw independently authored acquisition/conversion tooling is
+  published under CC0 1.0. It was used only as a technical reference.
+- This project's adapter and validation scripts are project code. Their status
+  does not change the Ministry of Education teaching-data license above.

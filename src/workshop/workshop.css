@@ -1,0 +1,49 @@
+.workshop { min-height: 100dvh; background: #f7f8f6; color: #112b55; }
+.workshop-inner { max-width: 1120px; margin: auto; padding: 28px clamp(20px, 4vw, 56px) 80px; }
+.workshop-back { border: 0; padding: 8px 0; background: none; color: #315c86; cursor: pointer; font-weight: 700; }
+.workshop-header { padding: 22px 0 30px; border-bottom: 2px solid #e4d7b9; }
+.workshop-eyebrow { color: #977120; letter-spacing: .12em; font-weight: 700; }
+.workshop-header h1 { font-family: 'Noto Serif TC', 'Microsoft JhengHei', serif; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.35; margin: 12px 0 22px; }
+.workshop-meta { display: flex; flex-wrap: wrap; gap: 10px 26px; font-weight: 700; }
+.workshop-hint { color: #536176; line-height: 1.6; }
+.workshop-section { margin-top: 44px; }
+.workshop-section h2, .workshop-examples h2 { font-size: clamp(1.35rem, 2.5vw, 1.8rem); }
+.workshop-list { border-top: 2px solid #c9d6d7; }
+.workshop-row { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 18px; padding: 22px 0; border-bottom: 1px solid #d8deda; }
+.workshop-row-heading { display: flex; gap: 14px; align-items: baseline; }
+.workshop-row-heading span { color: #a57920; font-weight: 700; }
+.workshop-row h3 { margin: 0; font-size: 1.12rem; }
+.workshop-row ul { display: flex; flex-wrap: wrap; gap: 10px 18px; list-style: none; padding: 0; margin: 0; align-items: baseline; line-height: 1.7; }
+.workshop-row li { position: relative; }
+.workshop-image-link, .workshop-ref-link { padding: 0; border: 0; background: none; color: #1a696a; cursor: pointer; font: inherit; text-align: left; text-decoration: underline; text-underline-offset: 4px; }
+.workshop-image-link span, .workshop-ref-link span { display: inline-block; margin-left: 3px; padding: 0 6px; border-radius: 5px; background: #dfefea; font-size: .76rem; font-weight: 700; text-decoration: none; }
+.workshop-hover-preview { position: fixed; box-sizing: border-box; padding: 6px; background: white; box-shadow: 0 8px 28px #112b5533; border-radius: 10px; z-index: 10; pointer-events: none; }
+.workshop-hover-preview img { display: block; width: 100%; height: auto; border-radius: 5px; }
+.workshop-examples { margin-top: 48px; padding: 25px; border-radius: 14px; background: #fff8e9; line-height: 1.8; scroll-margin-top: 20px; }
+.workshop-examples a { color: #166a6b; }
+.workshop-dialog { width: min(calc(100% - 20px), 1600px); max-width: none; max-height: calc(100dvh - 16px); border: 0; padding: 0; background: transparent; overflow: visible; }
+.workshop-dialog::backdrop { background: #0d2135eb; }
+body:has(.workshop-dialog[open]) { overflow: hidden; }
+.workshop-viewer { display: grid; justify-items: center; gap: 8px; }
+.workshop-viewer button { justify-self: end; color: white; border: 1px solid white; background: #18324b; border-radius: 6px; padding: 9px 16px; min-height: 44px; cursor: pointer; }
+.workshop-viewer button:focus-visible { outline-color: white; }
+.workshop-viewer img { display: block; width: auto; height: auto; max-width: 100%; max-height: calc(100dvh - 70px); object-fit: contain; border-radius: 8px; }
+@media (pointer: coarse) { .workshop-image-link, .workshop-ref-link { display: inline-flex; align-items: center; flex-wrap: wrap; min-height: 44px; } }
+@media (max-width: 700px) { .workshop-row { grid-template-columns: 1fr; gap: 10px; } .workshop-row ul { gap: 8px 14px; } .workshop-inner { padding-top: 16px; } }
+@page workshop { size: A4; margin: 13mm; }
+@media print {
+  .workshop { page: workshop; min-height: auto; color: #000; background: white; font-size: 10pt; }
+  .workshop-inner { max-width: none; padding: 0; }
+  .workshop-back, .workshop-hint, .workshop-hover-preview, .workshop-dialog, .workshop-image-link span, .workshop-ref-link span, .workshop-examples > a { display: none !important; }
+  .workshop-header { padding: 0 0 5px; }
+  .workshop-header h1 { font-size: 18pt; margin: 5px 0 8px; }
+  .workshop-meta { margin: 4px 0; gap: 8px 18px; }
+  .workshop-section { margin-top: 12px; }
+  .workshop-section h2, .workshop-examples h2 { font-size: 13pt; margin: 4px 0 7px; break-after: avoid; }
+  .workshop-row { grid-template-columns: 39mm minmax(0, 1fr); gap: 8px; padding: 4px 0; break-inside: avoid; }
+  .workshop-row h3 { font-size: 10pt; }
+  .workshop-row ul { gap: 2px 9px; }
+  .workshop-examples { margin-top: 10px; padding: 0; background: white; }
+  .workshop-examples p, .workshop-examples h3 { margin: 4px 0; }
+  .workshop-image-link, .workshop-ref-link { display: inline; min-height: 0; color: #000; text-decoration: none; }
+}

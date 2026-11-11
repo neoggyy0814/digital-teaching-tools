@@ -1,0 +1,17 @@
+.moe-stroke-staging/
+dist/
+.wrangler/
+node_modules/
+.openai/
+.codex/
+.agents/
+.env
+.env.*
+.npmrc
+*.log
+*.pem
+*.key
+public/workshop/examples/
+backups/
+*備份*/
+*驗收*/
