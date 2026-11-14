@@ -2,13 +2,17 @@
 
 提供數學面積切割與重組、國語筆順練習、「AI 二三事」第一彈 8 篇漫畫，以及 2026 年 12 月 2 日 Codex 研習大綱與圖卡。本站使用 React 與 Vite，GitHub Pages 直接提供建置後的靜態檔案。[開啟正式網站](https://neoggyy0814.github.io/digital-teaching-tools/)
 
+[開啟測試網站（ChatGPT Sites）](https://neiwai-digital-teaching-tools-test.neoggyy0814.chatgpt.site/)：供開發版本互動驗收，不代表正式發布。
+
+本專案主要由 Codex Cloud 開發與自動化測試，經使用者在 ChatGPT Sites 驗收並明確授權正式發布後，才將對應版本整合至 GitHub 的正式 `main` 分支，透過 GitHub Pages 正式提供。Codex Cloud 與 ChatGPT Sites 之間不預設有自動同步或部署功能；實際交付方式見 [開發環境、測試驗收與發布](ENVIRONMENT.md)。
+
 本網站供一般大眾瀏覽及作非商業教學使用。此聲明描述網站用途。第三方素材各自適用原有授權。
 
 ## 開發與維護
 
 - [專案工作指令](AGENTS.md)
 - [網站功能與架構](PROJECT_CONTEXT.md)
-- [本機開發、測試與發布](ENVIRONMENT.md)
+- [開發環境、測試驗收與發布](ENVIRONMENT.md)
 
 ## 筆順資料授權
 

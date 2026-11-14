@@ -1,6 +1,6 @@
 # 網站脈絡
 
-內惟國小數位教學工具提供公開、非商業的數位教學與 AI 科普資源。各工具最初分開製作，後來整合至 ChatGPT Sites。目前四個入口共用同一份網站原始碼，透過 GitHub Pages 發布。
+內惟國小數位教學工具提供公開、非商業的數位教學與 AI 科普資源。各工具最初分開製作，後來整合至 ChatGPT Sites。目前四個入口共用同一份網站原始碼。專案以 Codex Cloud 作為主要開發及自動測試環境，ChatGPT Sites 作為使用者互動驗收的測試網站，GitHub Pages 作為正式發布網站；操作與授權邊界見 [AGENTS.md](AGENTS.md)，環境與發布程序見 [ENVIRONMENT.md](ENVIRONMENT.md)。
 
 ## 整體架構與導覽
 
