@@ -1,8 +1,6 @@
-import { useState } from 'react'
 import { formUrl, sheetEmbedUrl } from './questionBoardConfig.js'
 
 export default function QuestionBoard() {
-  const [revision, setRevision] = useState(0)
   return <section className="workshop-questions" id="workshop-questions" aria-labelledby="questions-title">
     <h2 id="questions-title">研習問題留言板</h2>
     <section aria-labelledby="question-form-title">
@@ -10,12 +8,9 @@ export default function QuestionBoard() {
       <iframe title="Google 問題表單" src={`${formUrl}?embedded=true`} referrerPolicy="no-referrer" />
       <a href={formUrl} target="_blank" rel="noopener noreferrer">另開表單</a>
     </section>
-    <section aria-labelledby="question-sheet-title">
+    <section className="workshop-responses" aria-labelledby="question-sheet-title">
       <h3 id="question-sheet-title">其他老師的問題</h3>
-      {sheetEmbedUrl ? <>
-        <button className="workshop-board-retry" onClick={() => setRevision(n => n + 1)}>重新整理回覆</button>
-        <iframe key={revision} className="workshop-response-sheet" title="其他老師的問題：公開試算表" src={sheetEmbedUrl} referrerPolicy="no-referrer" />
-      </> : <p>待提供 Google 試算表「發布到網路」的嵌入網址。</p>}
+      {sheetEmbedUrl ? <iframe className="workshop-response-sheet" title="其他老師的問題：公開試算表" src={sheetEmbedUrl} referrerPolicy="no-referrer" /> : <p>待提供 Google 試算表「發布到網路」的嵌入網址。</p>}
     </section>
   </section>
 }
