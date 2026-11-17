@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import './workshop.css'
+import QuestionBoard from './QuestionBoard.jsx'
 
 const sections = [
   { title: '第一小時｜AI 觀念與日常應用', items: [
@@ -14,14 +15,15 @@ const sections = [
     ['07', '下載與登入', ['官方下載', '安裝與登入', '本機執行環境及介面導覽', '權限與安全']],
     ['08', 'Agent 與額度', ['本機檔案操作', '任務自主執行', '額度檢視', 'Agent.md設定', ['先規劃再執行', '16-agent-permissions']]],
     ['09', '專案與工作流', [['工作流', '06-workflow'], '專案設定', ['需求工程', '07-requirements-agent'], ['需求規格', '08-specification'], ['驗收', '09-acceptance'], ['迭代與修正', '10-iteration']]],
-    ['10', '單機網頁實作', [['說明實作範圍', '17-local-web-scope'], { reference: true, label: '參考範例' }, ['實作題目', '18-practice-topics'], '操作示範及練習', '如何檢查成果']],
-    ['11', '討論與修正', ['收集教師操作上的疑問和困難', '回答疑問', '完美收尾']],
+    ['10', '單機網頁實作', [['說明實作範圍', '17-local-web-scope'], '參考範例', ['實作題目', '18-practice-topics'], '操作示範及練習', '如何檢查成果']],
+    ['11', '討論與修正', [{ board: true, label: '收集教師操作上的疑問和困難' }, '回答疑問', '完美收尾']],
   ]},
 ]
 const imageUrl = (id, format = 'png') => `${import.meta.env.BASE_URL}workshop/images/${id}.${format}`
 
 export default function Workshop({ onBack }) {
   const [image, setImage] = useState(null)
+  const [boardOpen, setBoardOpen] = useState(false)
   const [preview, setPreview] = useState(null)
   const dialog = useRef(null)
   const trigger = useRef(null)
@@ -81,18 +83,14 @@ export default function Workshop({ onBack }) {
           <div className="workshop-row-heading"><span>{number}</span><h3>{title}</h3></div>
           <ul>{entries.map(entry => {
             if (typeof entry === 'string') return <li key={entry}>{entry}</li>
-            if (entry.reference) return <li key={entry.label}><a className="workshop-ref-link" href="#workshop-examples">{entry.label} <span>查看範例 ↓</span></a></li>
+            if (entry.board) return <li key={entry.label}><button className="workshop-image-link" aria-expanded={boardOpen} aria-controls="workshop-questions" onClick={() => setBoardOpen(open => !open)}>{entry.label} <span>留言板</span></button></li>
             return <li key={entry[1]}><button className="workshop-image-link" aria-haspopup="dialog"
               onPointerEnter={e => showPreview(e, entry[1])} onPointerLeave={() => setPreview(null)}
               onClick={e => openImage(e, entry)}>{entry[0]} <span>看圖</span></button></li>
           })}</ul>
         </article>)}</div>
       </section>)}
-      <section className="workshop-examples" id="workshop-examples">
-        <h2>參考範例</h2>
-        <p>目前沒有可公開的參考範例。確認作品原始連結或取得截圖轉載許可後，會在此補充。</p>
-        <a href="#workshop-top">↑ 回到大綱頂端</a>
-      </section>
+      {boardOpen && <QuestionBoard />}
     </div>
     {preview && <div className="workshop-hover-preview" aria-hidden="true" style={{ left: preview.left, top: preview.top, width: preview.width }}>
       <img src={imageUrl(preview.id, 'webp')} alt="" width="640" height="360" />

@@ -47,3 +47,16 @@ body:has(.workshop-dialog[open]) { overflow: hidden; }
   .workshop-examples p, .workshop-examples h3 { margin: 4px 0; }
   .workshop-image-link, .workshop-ref-link { display: inline; min-height: 0; color: #000; text-decoration: none; }
 }
+
+.workshop-questions { margin-top: 32px; padding: clamp(16px, 3vw, 28px); border: 1px solid #c9d6d7; border-radius: 14px; background: white; line-height: 1.7; scroll-margin-top: 20px; }
+.workshop-questions h2 { margin-top: 0; }
+.workshop-questions a { color: #1a696a; }
+.workshop-board-retry { min-height: 44px; padding: 8px 14px; color: #1a696a; background: #dfefea; border: 1px solid #c9d6d7; border-radius: 6px; cursor: pointer; font: inherit; }
+.workshop-questions iframe { display: block; width: 100%; height: 520px; border: 0; margin-top: 16px; }
+@media (max-width: 700px) { .workshop-questions iframe { height: 500px; } }
+@media print { .workshop-questions { display: none; } }
+
+.workshop-questions > section { margin-top: 20px; padding-top: 12px; border-top: 1px solid #c9d6d7; min-width: 0; }
+.workshop-questions p, .workshop-questions a { overflow-wrap: anywhere; }
+
+.workshop-questions iframe.workshop-response-sheet { height: 420px; }
