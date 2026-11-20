@@ -4,7 +4,7 @@ import QuestionBoard from './QuestionBoard.jsx'
 
 const sections = [
   { title: '第一小時｜AI 觀念與日常應用', items: [
-    ['01', '帳號登入', ['M365 教育帳號/Copilot 登入', 'Chrome/ChatGPT 登入', '平台及帳號辨識']],
+    ['01', '帳號登入', [['M365 教育帳號/Copilot 登入', '19-m365-login'], ['Chrome/ChatGPT 登入', '20-chatgpt-login'], ['平台及帳號辨識', '21-platform-accounts']]],
     ['02', 'AI 觀念與比較', [['對話型AI 與代理AI差異', '01-dialogue-agent'], ['Vibe Coding/氛圍式編程', '02-vibe-coding'], ['Copilot、ChatGPT、Codex比較與限制', '11-tool-comparison'], ['免費付費差異/額度政策', '12-usage-strategy'], ['上述三個工具在本次研習的分工', '03-tool-roles']]],
     ['03', '個人化自訂指令', [['個人化設定', '13-custom-instructions'], '如何設定', '指令說明', 'ChatGPT 設定', 'Copilot 設定']],
     ['04', '提示詞與需求工程', [['什麼是提示詞工程', '04-prompt'], ['什麼是需求工程', '05-requirements-llm'], ['提示詞教練', '14-prompt-coach'], ['專業名詞與術語', '15-technical-terms']]],

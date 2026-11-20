@@ -24,4 +24,4 @@ React 由 [src/main.jsx](src/main.jsx) 啟動。[src/App.jsx](src/App.jsx) 管�
 
 ## 研習資訊
 
-[Workshop.jsx](src/workshop/Workshop.jsx) 提供 2026 年 12 月 2 日 Codex 研習大綱、授課段落和參考範例區。18 張教學圖卡位於 [public/workshop/images](public/workshop/images)，桌面懸停使用 WebP 預覽，點選開啟 PNG 大圖。[workshop.css](src/workshop/workshop.css) 定義 A4 列印樣式，可用瀏覽器列印或另存 PDF。目前參考範例區尚無確認可公開的項目。
+[Workshop.jsx](src/workshop/Workshop.jsx) 提供 2026 年 12 月 2 日 Codex 研習大綱、授課段落和參考範例區。21 張教學圖卡位於 [public/workshop/images](public/workshop/images)，其中「01 帳號登入」包含 M365／Copilot 登入、Google 帳號登入 ChatGPT、平台及帳號辨識三張圖卡。桌面懸停使用 WebP 預覽，點選開啟 PNG 大圖。[workshop.css](src/workshop/workshop.css) 定義 A4 列印樣式，可用瀏覽器列印或另存 PDF。目前參考範例區尚無確認可公開的項目。
