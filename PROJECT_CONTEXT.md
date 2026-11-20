@@ -24,6 +24,6 @@ React 由 [src/main.jsx](src/main.jsx) 啟動。[src/App.jsx](src/App.jsx) 管�
 
 ## 研習資訊
 
-[Workshop.jsx](src/workshop/Workshop.jsx) 提供 2026 年 12 月 2 日 Codex 研習大綱、授課段落和參考範例區。22 張教學圖卡位於 [public/workshop/images](public/workshop/images)，其中「01 帳號登入」包含 M365／Copilot 登入、Google 帳號登入 ChatGPT、平台及帳號辨識三張圖卡。桌面懸停使用 WebP 預覽，點選開啟 PNG 大圖。[workshop.css](src/workshop/workshop.css) 定義 A4 列印樣式，可用瀏覽器列印或另存 PDF。目前參考範例區尚無確認可公開的項目。
+[Workshop.jsx](src/workshop/Workshop.jsx) 提供 2026 年 12 月 2 日 Codex 研習大綱、授課段落和參考範例區。30 張教學圖卡位於 [public/workshop/images](public/workshop/images)，其中「01 帳號登入」包含 M365／Copilot 登入、Google 帳號登入 ChatGPT、平台及帳號辨識三張圖卡。「03 個人化自訂指令」另有 ChatGPT／Copilot 設定圖卡；「07 下載與登入」依序提供官方下載、安裝與登入、介面導覽、模式辨識、開啟資料夾及權限與安全六張圖卡。介面導覽、模式辨識及開啟資料夾採用已確認的精簡版。桌面懸停使用 WebP 預覽，點選開啟 PNG 大圖。[workshop.css](src/workshop/workshop.css) 定義 A4 列印樣式，可用瀏覽器列印或另存 PDF。目前參考範例區尚無確認可公開的項目。
 
 「03 個人化自訂指令」維持簡潔大綱，依序為個人化設定、指令說明、下載指令檔案、ChatGPT 設定及 Copilot 設定；不恢復「如何設定」。「指令說明」沿用圖卡放大機制；「下載指令檔案」開啟可直接存取與重新整理的 `#workshop-instructions` 獨立頁面，提供全文閱讀、複製、TXT 下載及返回研習大綱。[CustomInstructions.jsx](src/workshop/CustomInstructions.jsx) 仍以 [general-custom-instructions.txt](public/workshop/files/general-custom-instructions.txt) 作為單一來源，原文與圖卡均未變更。[.gitattributes](.gitattributes) 保留此 TXT 的原始位元組與換行。

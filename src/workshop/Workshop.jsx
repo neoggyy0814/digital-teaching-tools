@@ -7,13 +7,13 @@ const sections = [
   { title: '第一小時｜AI 觀念與日常應用', items: [
     ['01', '帳號登入', [['M365 教育帳號/Copilot 登入', '19-m365-login'], ['Chrome/ChatGPT 登入', '20-chatgpt-login'], ['平台及帳號辨識', '21-platform-accounts']]],
     ['02', 'AI 觀念與比較', [['對話型AI 與代理AI差異', '01-dialogue-agent'], ['Vibe Coding/氛圍式編程', '02-vibe-coding'], ['Copilot、ChatGPT、Codex比較與限制', '11-tool-comparison'], ['免費付費差異/額度政策', '12-usage-strategy'], ['上述三個工具在本次研習的分工', '03-tool-roles']]],
-    ['03', '個人化自訂指令', [['個人化設定', '13-custom-instructions'], ['指令說明', '22-general-custom-instructions'], { instructions: true, label: '下載指令檔案' }, 'ChatGPT 設定', 'Copilot 設定']],
+    ['03', '個人化自訂指令', [['個人化設定', '13-custom-instructions'], ['指令說明', '22-general-custom-instructions'], { instructions: true, label: '下載指令檔案' }, ['ChatGPT 設定', '23-chatgpt-personalization'], ['Copilot 設定', '24-copilot-personalization']]],
     ['04', '提示詞與需求工程', [['什麼是提示詞工程', '04-prompt'], ['什麼是需求工程', '05-requirements-llm'], ['提示詞教練', '14-prompt-coach'], ['專業名詞與術語', '15-technical-terms']]],
     ['05', '文書示範', ['展示既有對話歷程', '核實文件示範', '填報表單對照示範', '製作文件示範', '自由練習']],
     ['06', '圖像示範', ['展示既有對話歷程', '繪圖提示詞工程示範', '繪圖生成實例', '自由練習']],
   ]},
   { title: '第二小時｜Codex 代理實作', items: [
-    ['07', '下載與登入', ['官方下載', '安裝與登入', '本機執行環境及介面導覽', '權限與安全']],
+    ['07', '下載與登入', [['官方下載', '25-official-download'], ['安裝與登入', '26-install-signin'], ['介面導覽', '27-interface-tour'], ['模式辨識', '28-mode-identification'], ['開啟資料夾', '29-open-folder'], ['權限與安全', '30-permissions-safety']]],
     ['08', 'Agent 與額度', ['本機檔案操作', '任務自主執行', '額度檢視', 'Agent.md設定', ['先規劃再執行', '16-agent-permissions']]],
     ['09', '專案與工作流', [['工作流', '06-workflow'], '專案設定', ['需求工程', '07-requirements-agent'], ['需求規格', '08-specification'], ['驗收', '09-acceptance'], ['迭代與修正', '10-iteration']]],
     ['10', '單機網頁實作', [['說明實作範圍', '17-local-web-scope'], '參考範例', ['實作題目', '18-practice-topics'], '操作示範及練習', '如何檢查成果']],
