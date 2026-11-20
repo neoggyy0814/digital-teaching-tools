@@ -7,7 +7,7 @@ import MathVisualization, { ConceptVisual } from './math/MathVisualization.jsx'
 import AiStories from './ai-stories/AiStories.jsx'
 import { storyBatches } from './ai-stories/batches.js'
 
-const workshopHashes = new Set(['#workshop-20261202', '#workshop-top', '#workshop-examples'])
+const workshopHashes = new Set(['#workshop-20261202', '#workshop-top', '#workshop-examples', '#workshop-instructions'])
 
 function requestStoryLandscape() {
   if (!matchMedia('(orientation: portrait) and (any-pointer: coarse)').matches) return

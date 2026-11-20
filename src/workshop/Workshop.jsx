@@ -7,7 +7,7 @@ const sections = [
   { title: '第一小時｜AI 觀念與日常應用', items: [
     ['01', '帳號登入', [['M365 教育帳號/Copilot 登入', '19-m365-login'], ['Chrome/ChatGPT 登入', '20-chatgpt-login'], ['平台及帳號辨識', '21-platform-accounts']]],
     ['02', 'AI 觀念與比較', [['對話型AI 與代理AI差異', '01-dialogue-agent'], ['Vibe Coding/氛圍式編程', '02-vibe-coding'], ['Copilot、ChatGPT、Codex比較與限制', '11-tool-comparison'], ['免費付費差異/額度政策', '12-usage-strategy'], ['上述三個工具在本次研習的分工', '03-tool-roles']]],
-    ['03', '個人化自訂指令', [['個人化設定', '13-custom-instructions'], ['指令說明', '22-general-custom-instructions'], 'ChatGPT 設定', 'Copilot 設定']],
+    ['03', '個人化自訂指令', [['個人化設定', '13-custom-instructions'], ['指令說明', '22-general-custom-instructions'], { instructions: true, label: '下載指令檔案' }, 'ChatGPT 設定', 'Copilot 設定']],
     ['04', '提示詞與需求工程', [['什麼是提示詞工程', '04-prompt'], ['什麼是需求工程', '05-requirements-llm'], ['提示詞教練', '14-prompt-coach'], ['專業名詞與術語', '15-technical-terms']]],
     ['05', '文書示範', ['展示既有對話歷程', '核實文件示範', '填報表單對照示範', '製作文件示範', '自由練習']],
     ['06', '圖像示範', ['展示既有對話歷程', '繪圖提示詞工程示範', '繪圖生成實例', '自由練習']],
@@ -23,11 +23,25 @@ const sections = [
 const imageUrl = (id, format = 'png') => `${import.meta.env.BASE_URL}workshop/images/${id}.${format}`
 
 export default function Workshop({ onBack }) {
+  const [instructionsOpen, setInstructionsOpen] = useState(() => location.hash === '#workshop-instructions')
   const [image, setImage] = useState(null)
   const [boardOpen, setBoardOpen] = useState(false)
   const [preview, setPreview] = useState(null)
   const dialog = useRef(null)
   const trigger = useRef(null)
+
+  useEffect(() => {
+    const syncInstructions = () => {
+      setInstructionsOpen(location.hash === '#workshop-instructions')
+      setPreview(null)
+    }
+    window.addEventListener('hashchange', syncInstructions)
+    return () => window.removeEventListener('hashchange', syncInstructions)
+  }, [])
+
+  useEffect(() => {
+    if (instructionsOpen) window.scrollTo(0, 0)
+  }, [instructionsOpen])
 
   useEffect(() => {
     if (location.hash === '#workshop-examples') document.getElementById('workshop-examples')?.scrollIntoView()
@@ -69,6 +83,8 @@ export default function Workshop({ onBack }) {
     trigger.current?.focus({ preventScroll: true })
   }
 
+  if (instructionsOpen) return <CustomInstructions />
+
   return <main className="workshop" id="workshop-top">
     <div className="workshop-inner">
       <button className="workshop-back" onClick={onBack}>← 返回網站入口</button>
@@ -84,12 +100,12 @@ export default function Workshop({ onBack }) {
           <div className="workshop-row-heading"><span>{number}</span><h3>{title}</h3></div>
           <ul>{entries.map(entry => {
             if (typeof entry === 'string') return <li key={entry}>{entry}</li>
+            if (entry.instructions) return <li key="custom-instructions"><a className="workshop-ref-link" href="#workshop-instructions">{entry.label}</a></li>
             if (entry.board) return <li key={entry.label}><button className="workshop-image-link" aria-expanded={boardOpen} aria-controls="workshop-questions" onClick={() => setBoardOpen(open => !open)}>{entry.label} <span>留言板</span></button></li>
             return <li key={entry[1]}><button className="workshop-image-link" aria-haspopup="dialog"
               onPointerEnter={e => showPreview(e, entry[1])} onPointerLeave={() => setPreview(null)}
               onClick={e => openImage(e, entry)}>{entry[0]} <span>看圖</span></button></li>
           })}</ul>
-          {number === '03' && <CustomInstructions onOpenImage={openImage} />}
         </article>)}</div>
       </section>)}
       {boardOpen && <QuestionBoard />}

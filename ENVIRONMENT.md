@@ -29,7 +29,7 @@ npm run preview
 
 [正式網站](https://neoggyy0814.github.io/digital-teaching-tools/) 以 GitHub Actions 作為發布來源。[工作流程](.github/workflows/pages.yml) 在推送 `main` 或手動執行時，依鎖定檔安裝套件、跑 ESLint 與測試，使用 Pages 提供的基底路徑建置並上傳 `dist/`。部署工作發布 `main` 的建置產物。
 
-[Vite 設定](vite.config.js) 的本機預設基底為 `/digital-teaching-tools/`。組合執行時的靜態資源網址時，使用 `import.meta.env.BASE_URL`，讓圖片、筆順 JSON 與 iframe 在子路徑下正常載入。GitHub Pages 僅提供靜態檔案。研習直連使用 `#workshop-20261202`，可直接重新整理。
+[Vite 設定](vite.config.js) 的本機預設基底為 `/digital-teaching-tools/`。組合執行時的靜態資源網址時，使用 `import.meta.env.BASE_URL`，讓圖片、筆順 JSON 與 iframe 在子路徑下正常載入。GitHub Pages 僅提供靜態檔案。研習直連使用 `#workshop-20261202`，通用版自訂指令獨立頁使用 `#workshop-instructions`；兩者均可直接開啟及重新整理。
 
 發布後核對 Actions 的建置、部署及 `github-pages` 環境所對應的提交，再從正式網址檢查四個入口、研習直連與靜態資源。觸控長按、滑動與方向鎖定須以目標裝置驗證，瀏覽器可能不支援方向鎖定。研習 A4 分頁及邊界以實際瀏覽器列印預覽為準。
 
