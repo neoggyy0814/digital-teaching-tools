@@ -61,3 +61,22 @@ body:has(.workshop-dialog[open]) { overflow: hidden; }
 .workshop-questions > .workshop-responses { width: 100%; max-width: 900px; margin: 16px auto 0; text-align: center; }
 .workshop-responses h3 { margin: 0 0 8px; }
 .workshop-questions iframe.workshop-response-sheet { width: 100%; max-width: 900px; height: 320px; margin: 0 auto; }
+
+.workshop-custom-instructions { grid-column: 1 / -1; min-width: 0; padding: 22px; border: 1px solid #c9d6d7; border-radius: 14px; background: white; }
+.workshop-custom-instructions h4 { margin: 0; font-size: 1.2rem; color: #1a696a; }
+.workshop-custom-instructions > p { margin: 10px 0 18px; line-height: 1.7; }
+.custom-instructions-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.custom-instructions-card { min-width: 0; padding: 0; border: 1px solid #c9d6d7; border-radius: 8px; overflow: hidden; background: #fffaf3; color: #1a696a; cursor: pointer; font: inherit; }
+.custom-instructions-card img { display: block; width: 100%; height: auto; }
+.custom-instructions-card span { display: block; padding: 10px; font-weight: 700; }
+.custom-instructions-content { min-width: 0; }
+.custom-instructions-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 12px; }
+.custom-instructions-actions button, .custom-instructions-actions a { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; min-height: 44px; padding: 8px 14px; border: 1px solid #1a696a; border-radius: 7px; font: inherit; font-weight: 700; }
+.custom-instructions-actions button { background: #1a696a; color: white; cursor: pointer; }
+.custom-instructions-actions button:disabled { opacity: .55; cursor: wait; }
+.custom-instructions-actions a { background: white; color: #1a696a; text-decoration: none; }
+.custom-instructions-actions [role="status"] { flex-basis: 100%; color: #1a696a; line-height: 1.5; }
+.custom-instructions-actions [role="status"]:empty { display: none; }
+.custom-instructions-text { box-sizing: border-box; width: 100%; max-height: 22rem; overflow: auto; margin: 0; padding: 16px; border: 1px solid #d8deda; border-radius: 8px; background: #f7f8f6; white-space: pre-wrap; overflow-wrap: anywhere; font: 1rem/1.75 ui-monospace, 'Microsoft JhengHei', monospace; tab-size: 2; }
+@media (max-width: 700px) { .workshop-custom-instructions { padding: 16px; } .custom-instructions-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; } .custom-instructions-text { max-height: 20rem; } }
+@media print { .workshop-custom-instructions { break-inside: avoid; padding: 10px; } .custom-instructions-card span, .custom-instructions-actions { display: none; } .custom-instructions-text { font-size: 8pt; max-height: 40mm; } }

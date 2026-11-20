@@ -33,4 +33,4 @@ npm run preview
 
 發布後核對 Actions 的建置、部署及 `github-pages` 環境所對應的提交，再從正式網址檢查四個入口、研習直連與靜態資源。觸控長按、滑動與方向鎖定須以目標裝置驗證，瀏覽器可能不支援方向鎖定。研習 A4 分頁及邊界以實際瀏覽器列印預覽為準。
 
-[原 ChatGPT Sites 網址](https://neiwai-digital-teaching-tools-test.neoggyy0814.chatgpt.site/) 保留為早期發布版本，現行發布走 GitHub Pages。
+[ChatGPT Sites 測試站](https://neiwai-digital-teaching-tools-test.neoggyy0814.chatgpt.site/) 依使用者要求同步更新，正式發布仍走 GitHub Pages。Sites 使用獨立來源與 `.openai/hosting.json`，透過既有 Sites 流程建置、封裝、儲存版本及部署。Sites 的 Vite 基底必須為 `/`；GitHub Pages 保持 `/digital-teaching-tools/`，避免測試站因子目錄資源不存在而顯示空白。
